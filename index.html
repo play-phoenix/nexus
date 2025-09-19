@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXUS Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@500;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="cyber-bg"></div>
+  <header class="nexus-header">
+    <div class="nexus-title">NEXUS</div>
+    <div class="nexus-sub">LOGIN PORTAL</div>
+  </header>
+  <main class="login-main">
+    <form class="login-form" autocomplete="off">
+      <input type="password" class="login-input" id="login-password" placeholder="PASSWORD" required maxlength="32" autocomplete="off">
+      <button type="submit" class="login-btn">LOGIN</button>
+    </form>
+    <div class="login-tip" id="loginTip">Enter the password to access NEXUS.</div>
+  </main>
+  <footer class="nexus-footer"><span>&copy; 2025 NEXUS. All rights reserved.</span></footer>
+  <audio id="bgmusic" src="assets/tokyo-drift.mp3" loop autoplay></audio>
+  <button id="music-toggle" class="music-toggle-btn" title="Mute/Unmute music">🔊</button>
+  <script src="js/main.js"></script>
+</body>
+</html>
