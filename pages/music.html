@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXUS Music</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@500;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/music-bg.css">
+  <link rel="stylesheet" href="../css/music.css">
+</head>
+<body>
+  <div class="cyber-bg"></div>
+  <aside class="nexus-sidebar" tabindex="0">
+    <nav>
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="games.html">GAMES</a></li>
+        <li><a href="music.html">MUSIC</a></li>
+        <li><a href="settings.html">SETTINGS</a></li>
+        <li><a href="system.html">SYSTEM</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <header class="nexus-header">
+    <div class="nexus-title">NEXUS</div>
+    <div class="nexus-sub">MUSIC</div>
+  </header>
+  <main class="nexus-main">
+    <h2 style="color:#ff003c;font-family:'Orbitron';text-shadow:0 0 18px #ff003c88;">Cyber Music Search</h2>
+    <form id="musicSearch" class="music-search-form">
+      <input type="text" id="musicQuery" placeholder="Type a song or artist..." required>
+      <button type="submit">Search</button>
+    </form>
+    <div class="music-results" id="musicResults"></div>
+  </main>
+  <footer class="nexus-footer"><span>&copy; 2025 NEXUS. All rights reserved.</span></footer>
+  <audio id="bgmusic" src="../assets/tokyo-drift.mp3" loop autoplay></audio>
+  <button id="music-toggle" class="music-toggle-btn" title="Mute/Unmute music">🔊</button>
+  <script src="../js/music-bg.js"></script>
+  <script>
+    document.getElementById('musicSearch').onsubmit = function(e) {
+      e.preventDefault();
+      const q = document.getElementById('musicQuery').value;
+      window.open("https://www.youtube.com/results?search_query=" + encodeURIComponent(q), "_blank");
+    };
+  </script>
+</body>
+</html>

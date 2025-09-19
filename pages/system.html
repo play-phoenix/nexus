@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXUS System</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@500;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/system.css">
+</head>
+<body>
+  <div class="cyber-bg"></div>
+  <aside class="nexus-sidebar" tabindex="0">
+    <nav>
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="games.html">GAMES</a></li>
+        <li><a href="music.html">MUSIC</a></li>
+        <li><a href="settings.html">SETTINGS</a></li>
+        <li><a href="system.html">SYSTEM</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <header class="nexus-header">
+    <div class="nexus-title">NEXUS</div>
+    <div class="nexus-sub">SYSTEM INFO</div>
+  </header>
+  <main class="nexus-main">
+    <section class="system-cards">
+      <div class="system-card"><span class="sys-label">Browser</span><span class="sys-value" id="browserValue">...</span></div>
+      <div class="system-card"><span class="sys-label">Device</span><span class="sys-value" id="deviceValue">...</span></div>
+      <div class="system-card"><span class="sys-label">OS</span><span class="sys-value" id="osValue">...</span></div>
+      <div class="system-card"><span class="sys-label">Screen</span><span class="sys-value" id="screenValue">...</span></div>
+      <div class="system-card"><span class="sys-label">Time</span><span class="sys-value" id="timeValue">...</span></div>
+      <div class="system-card"><span class="sys-label">IP Address</span><span class="sys-value" id="ipValue">...</span></div>
+      <div class="system-card"><span class="sys-label">Location</span>
+        <span class="sys-value" id="locationValue">...</span>
+        <span class="sys-extra" id="addressValue">...</span>
+        <span class="sys-extra" id="mapsLink"></span>
+      </div>
+    </section>
+  </main>
+  <footer class="nexus-footer"><span>&copy; 2025 NEXUS. All rights reserved.</span></footer>
+  <audio id="bgmusic" src="../assets/tokyo-drift.mp3" loop autoplay></audio>
+  <button id="music-toggle" class="music-toggle-btn" title="Mute/Unmute music">🔊</button>
+  <link rel="stylesheet" href="../css/music-bg.css">
+  <script src="../js/music-bg.js"></script>
+  <script src="../js/system.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXUS Settings</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@500;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/music-bg.css">
+  <link rel="stylesheet" href="../css/settings.css">
+</head>
+<body>
+  <div class="cyber-bg"></div>
+  <aside class="nexus-sidebar" tabindex="0">
+    <nav>
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="games.html">GAMES</a></li>
+        <li><a href="music.html">MUSIC</a></li>
+        <li><a href="settings.html">SETTINGS</a></li>
+        <li><a href="system.html">SYSTEM</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <header class="nexus-header">
+    <div class="nexus-title">NEXUS</div>
+    <div class="nexus-sub">SETTINGS</div>
+  </header>
+  <main class="nexus-main">
+    <section class="settings-content">
+      <div class="setting-row">
+        <input type="text" id="music-url" placeholder="Paste music URL here" style="width:70%;">
+        <button id="music-url-save" class="setting-btn" style="margin-left: 1em;">SET MUSIC</button>
+      </div>
+      <div class="setting-row">
+        <label for="music-mute" class="setting-label">Background Music</label>
+        <input type="checkbox" id="music-mute">
+      </div>
+      <div class="setting-row">
+        <button id="logout-btn" class="setting-btn">LOGOUT</button>
+      </div>
+    </section>
+  </main>
+  <footer class="nexus-footer"><span>&copy; 2025 NEXUS. All rights reserved.</span></footer>
+  <audio id="bgmusic" src="../assets/tokyo-drift.mp3" loop autoplay></audio>
+  <button id="music-toggle" class="music-toggle-btn" title="Mute/Unmute music">🔊</button>
+  <script src="../js/music-bg.js"></script>
+  <script>
+    document.getElementById('music-mute').checked = document.getElementById('bgmusic').muted;
+    document.getElementById('music-mute').onchange = function() {
+      document.getElementById('bgmusic').muted = this.checked;
+      document.getElementById('music-toggle').textContent = this.checked ? "🔇" : "🔊";
+    };
+    document.getElementById('logout-btn').onclick = function() {
+      localStorage.removeItem('nexusLoggedIn');
+      window.location.href = "../index.html";
+    }
+  </script>
+</body>
+</html>
