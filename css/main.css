@@ -1,0 +1,455 @@
+/* ====== CYBER BLACK/RED GLOBAL THEME ====== */
+body {
+  margin: 0;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  background: #090909;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.cyber-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(135deg, #ff003c22 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(45deg, #ff003c11 0 1px, transparent 1px 40px);
+  animation: gridMove 12s linear infinite;
+  pointer-events: none;
+}
+@keyframes gridMove {
+  0% { background-position: 0 0, 0 0;}
+  100% { background-position: 60px 60px, 40px 40px;}
+}
+.nexus-header {
+  width: 100vw;
+  padding: 32px 0 10px 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background: rgba(0,0,0,0.88);
+  box-shadow: 0 2px 24px #ff003c44;
+}
+.nexus-title {
+  font-size: 4vw;
+  color: #ff003c;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.6vw;
+  text-shadow: 0 0 32px #ff003c, 0 0 8px #fff;
+}
+.nexus-sub {
+  color: #fff;
+  letter-spacing: 0.22em;
+  font-size: 1.1em;
+  text-shadow: 0 0 20px #ff003c;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+}
+.nexus-main {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1;
+  margin-top: 32px;
+  margin-bottom: 64px;
+  position: relative;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff003c;
+  border-radius: 6px;
+}
+.nexus-footer {
+  width: 100vw;
+  text-align: center;
+  padding: 16px 0;
+  background: rgba(0,0,0,0.85);
+  box-shadow: 0 -2px 24px #ff003c44;
+  color: #ff003c;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+}
+@media (max-width: 600px) {
+  .nexus-title { font-size: 2.2em; }
+  .nexus-header { padding-top: 16px; padding-bottom: 8px;}
+  .nexus-main { margin-top: 12px; }
+}
+
+/* ====== SIDEBAR ====== */
+.nexus-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 74px;
+  background: #0a0a0a;
+  border-right: 3px solid #ff003c;
+  box-shadow: 4px 0 32px #ff003c55;
+  transition: width 0.3s cubic-bezier(.6,0,.4,1), box-shadow 0.22s;
+  overflow: hidden;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.nexus-sidebar:hover, .nexus-sidebar:focus-within {
+  width: 210px;
+  box-shadow: 8px 0 54px #ff003c99;
+}
+.nexus-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nexus-sidebar nav ul li {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.32s, transform 0.32s;
+  margin: 20px 0;
+  padding-left: 14px;
+}
+.nexus-sidebar:hover nav ul li,
+.nexus-sidebar:focus-within nav ul li {
+  opacity: 1;
+  transform: translateX(0);
+}
+.nexus-sidebar nav ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.34em;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  padding: 14px 0 14px 0;
+  letter-spacing: 0.13em;
+  border-radius: 8px 0 0 8px;
+  transition: color 0.18s, background 0.18s, font-weight 0.18s, box-shadow 0.18s;
+  box-shadow: 0 0 0 #ff003c;
+}
+.nexus-sidebar nav ul li a:hover,
+.nexus-sidebar nav ul li a:focus {
+  background: #1a1a1a;
+  color: #ff003c;
+  font-weight: 900;
+  box-shadow: 0 0 16px #ff003c66;
+}
+@media (max-width: 700px) {
+  .nexus-sidebar { width: 38px;}
+  .nexus-sidebar:hover, .nexus-sidebar:focus-within { width: 140px;}
+  .nexus-sidebar nav ul li a { font-size: 1em;}
+}
+
+/* ====== LOGIN PAGE ====== */
+.login-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 64px;
+  min-height: 52vh;
+  z-index: 1;
+}
+.login-form {
+  background: rgba(18,24,31,0.99);
+  border: 2px solid #ff003c;
+  border-radius: 18px;
+  box-shadow: 0 0 32px #ff003c44, 0 0 4px #ff003c;
+  padding: 2vw 3vw;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  margin-bottom: 2vw;
+}
+.login-input {
+  font-family: 'Inter', 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  background: #121212;
+  color: #ff003c;
+  border: 2px solid #ff003c;
+  border-radius: 10px;
+  padding: 13px 22px;
+  outline: none;
+  letter-spacing: 0.14em;
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
+}
+.login-input:focus {
+  border-color: #fff;
+  background: #1a1a1a;
+  color: #fff;
+}
+.login-btn {
+  background: linear-gradient(90deg,#ff003c 10%,#121212 90%);
+  color: #fff;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-size: 1.13em;
+  letter-spacing: 0.18em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.18s;
+  font-weight: 700;
+  padding: 14px 0;
+}
+.login-btn:hover, .login-btn:focus {
+  background: #ff003c;
+  color: #222c38;
+}
+.login-tip {
+  color: #ff003c;
+  text-align: center;
+  font-size: 1.08em;
+  letter-spacing: 0.07em;
+  background: rgba(8,26,33,0.87);
+  border-radius: 9px;
+  padding: 1vw 2vw;
+  box-shadow: 0 0 14px #ff003c33;
+  margin-bottom: 1vw;
+  min-height: 2em;
+  transition: color 0.2s;
+}
+@keyframes shake {
+  0% { transform: translateX(0);}
+  25% { transform: translateX(-7px);}
+  50% { transform: translateX(7px);}
+  75% { transform: translateX(-7px);}
+  100% { transform: translateX(0);}
+}
+.login-tip.error {
+  color: #fff;
+  background: #ff003c;
+  animation: shake 0.3s;
+}
+@media (max-width: 600px) {
+  .login-form { padding: 6vw 2vw; max-width: 98vw;}
+  .login-tip { font-size: 0.98em; padding: 2vw;}
+}
+
+/* ====== SYSTEM PAGE ====== */
+.system-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  justify-content: center;
+  margin-top: 2vw;
+  max-width: 980px;
+}
+.system-card {
+  background: #121212;
+  border: 2px solid #ff003c;
+  color: #fff;
+  width: 260px;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.7vw;
+  box-shadow: 0 0 14px #ff003c44;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-size: 1.11em;
+  letter-spacing: 0.11em;
+  border-radius: 14px;
+}
+.system-card:hover, .system-card:focus {
+  border-color: #fff;
+  color: #ff003c;
+  background: #1a1a1a;
+  box-shadow: 0 0 20px #ff003c, 0 0 10px #fff;
+}
+.sys-label {
+  color: #ff003c;
+  font-size: 1.09em;
+  margin-bottom: 10px;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  text-shadow: 0 0 8px #ff003c;
+}
+.sys-value {
+  font-size: 1em;
+  color: #fff;
+  text-align: center;
+  word-break: break-all;
+}
+.sys-extra {
+  font-size: 0.99em;
+  color: #ff003c;
+  margin-top: 6px;
+  text-align: center;
+  word-break: break-all;
+}
+#mapsLink a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.98em;
+}
+@media (max-width: 600px) {
+  .system-cards { gap: 12px; }
+  .system-card { width: 97vw; min-width: 140px; font-size: 1em;}
+}
+
+/* ====== GAMES PAGE ====== */
+.games-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  justify-content: center;
+  margin-top: 2vw;
+  max-width: 960px;
+}
+.game-card {
+  background: #111;
+  border: 2px solid #ff003c;
+  color: #fff;
+  width: 200px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-size: 1.25em;
+  letter-spacing: 0.11em;
+  box-shadow: 0 0 20px #ff003c55;
+  border-radius: 14px;
+  transition: box-shadow 0.2s, border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s;
+  cursor: pointer;
+  margin-bottom: 1vw;
+}
+.game-card:hover, .game-card:focus {
+  border-color: #fff;
+  color: #ff003c;
+  background: #1a1a1a;
+  box-shadow: 0 0 32px #ff003c, 0 0 10px #fff;
+  transform: scale(1.05);
+}
+
+/* ====== MUSIC PAGE ====== */
+.music-search-form {
+  display: flex;
+  gap: 12px;
+  margin: 24px auto 12px auto;
+  width: 98vw;
+  max-width: 440px;
+}
+.music-search-form input {
+  flex: 1;
+  font-size: 1.1em;
+  padding: 12px;
+  border: 2px solid #ff003c;
+  background: #181818;
+  color: #ff003c;
+  border-radius: 10px;
+  font-family: 'Inter', 'Orbitron', sans-serif;
+  outline: none;
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
+}
+.music-search-form input:focus {
+  border-color: #fff;
+  background: #222;
+  color: #fff;
+}
+.music-search-form button {
+  background: linear-gradient(90deg,#ff003c 10%,#181818 90%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-size: 1.08em;
+  letter-spacing: 0.12em;
+  padding: 13px 22px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #ff003c44;
+  transition: background 0.18s, color 0.18s;
+}
+.music-search-form button:hover, .music-search-form button:focus {
+  background: #ff003c;
+  color: #222;
+}
+.music-results {
+  margin-top: 18px;
+}
+
+/* ====== SETTINGS PAGE ====== */
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
+  margin-top: 2vw;
+  width: 100%;
+  max-width: 420px;
+}
+.setting-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1vw;
+}
+.setting-label {
+  color: #fff;
+  font-size: 1.18em;
+  letter-spacing: 0.1em;
+  margin-right: 1vw;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+}
+.setting-btn {
+  width: 100%;
+  background: #ff003c;
+  color: #fff;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  font-size: 1.15em;
+  letter-spacing: 0.18em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 1em 0;
+  box-shadow: 0 0 14px #ff003c44;
+  transition: background 0.18s;
+}
+.setting-btn:hover, .setting-btn:focus {
+  background: #fff;
+  color: #ff003c;
+}
+input[type="checkbox"] {
+  accent-color: #ff003c;
+  width: 1.4em;
+  height: 1.4em;
+  margin-right: 1em;
+}
+@media (max-width: 600px) {
+  .settings-content { max-width: 98vw; }
+}
+
+/* ====== MUSIC BACKGROUND CONTROL BUTTON ====== */
+.music-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: #1a1a1a;
+  border: 2px solid #ff003c;
+  color: #ff003c;
+  font-size: 2em;
+  border-radius: 50%;
+  box-shadow: 0 0 18px #ff003c55;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.music-toggle-btn:hover {
+  background: #ff003c;
+  color: #fff;
+}
